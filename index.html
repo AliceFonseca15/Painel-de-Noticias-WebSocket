@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Notícias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="modal-login" class="modal">
+        <div class="caixa-login">
+            <h3>Bem-vindo!</h3>
+            <input id="input-nome" placeholder="Digite seu nome...">
+            <br><br>
+            <button onclick="entrar()">Entrar</button>
+        </div>
+    </div>
+
+    <div id="view-lista" style="display:none;">
+        <h1>Painel de Notícias</h1>
+        
+        <div id="admin-panel" style="display:none; border: 2px dashed #007bff; padding: 15px; margin-bottom: 20px; background: #eef;">
+            <h3>Área do Administrador</h3>
+            <input id="new-titulo" placeholder="Título da notícia" style="width: 95%; margin-bottom: 10px;">
+            
+            <textarea id="new-conteudo" placeholder="Conteúdo detalhado da notícia..." rows="4" style="width: 95%; margin-bottom: 10px;"></textarea>
+            
+            <br>
+            <button onclick="publicarNoticiaAdmin()">Publicar Notícia</button>
+        </div>
+
+        <div id="lista-noticias"></div>
+    </div>
+
+    <div id="view-noticia" style="display:none;">
+        <button onclick="voltar()">Voltar</button>
+        <h2 id="titulo-aberto"></h2>
+        <p id="conteudo-aberto"></p>
+        <div id="chat" style="height: 200px; border: 1px solid #ccc; overflow-y: scroll;"></div>
+        <input id="input-chat" placeholder="Mensagem...">
+        <button onclick="enviarMensagem()">Enviar</button>
+    </div>
+</body>
+</html>
+
+
+<script src="script.js"></script>
