@@ -7,6 +7,7 @@ historico_noticias = []
 
 async def handler(websocket):
     clientes.add(websocket)
+    print(f"Nova conexão! Total de clientes conectados: {len(clientes)}")
     print(f"Conexão aberta: {websocket.remote_address}")
     for noticia in historico_noticias:
         await websocket.send(json.dumps(noticia))  
